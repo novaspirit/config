@@ -1,0 +1,18 @@
+#!/bin/bash
+##########################################
+#what is this:                           #
+#this will reboot your tf101 to recovery #
+#Installation:                           #
+#copy this script to your /usr/bin folder#
+#then sudo chmod +x /usr/bin/tf-reboot   #
+#usage:                                  #
+#sudo tf-reboot                          #
+##########################################
+
+if [[ $EUID -ne 0 ]]; then
+  echo "This must be ran as root" 1>&2
+	exit 1
+else
+	echo boot-recovery | dd of=/dev/mmcblk0p3 bs=1 seek=0
+	reboot
+fi
