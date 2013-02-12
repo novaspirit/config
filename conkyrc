@@ -70,3 +70,6 @@ Uploaded: $alignr  ${totalup wlan0}
 ${font Arial:bold:size=10}${color Tan2}BATTERY ${color DarkSlateGray}${hr 2}
 $font${color DimGray}Device: $alignr ${exec cat /sys/devices/platform/tegra-i2c.1/i2c-2/2-000b/power_supply/battery/capacity} %
 $font${color DimGray}Dock: $alignr ${exec cat /sys/devices/platform/tegra-i2c.1/i2c-2/2-0019/power_supply/dock_battery/capacity} %
+
+${font Arial:bold:size=10}${color Tan2}Temp ${color DarkSlateGray}${hr 2}
+$font${color DimGray}Temp: $alignr ${exec cat /sys/devices/platform/tegra-i2c.3/i2c-4/4-004c/ext_temperature} C
